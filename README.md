@@ -14,7 +14,11 @@ This app is super simplistic and uses Bootstrap 3 to provide minimalistic and ea
 ### Technologies Used 
 * React
 * Nodejs
+* Express
 * MongoDB
+* Bundle.js
+* Bootstrap
+* Webpacks
 * Heroku Deployment 
 * npm packages
     *  "axios": "^0.15.3",
