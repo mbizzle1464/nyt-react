@@ -22099,11 +22099,6 @@
 	          React.createElement(
 	            "b",
 	            null,
-	            React.createElement(
-	              "i",
-	              null,
-	              "A React Rendition"
-	            )
 	          )
 	        ),
 	        React.createElement(
@@ -22242,7 +22237,7 @@
 	          React.createElement("br", null),
 	          React.createElement(
 	            "button",
-	            { type: "submit", className: "btn btn-info col-md-offset-5 col-md-2", id: "searchBtn" },
+	            { type: "submit", className: "btn btn-danger col-md-offset-5 col-md-2", id: "searchBtn" },
 	            "Search"
 	          )
 	        )
