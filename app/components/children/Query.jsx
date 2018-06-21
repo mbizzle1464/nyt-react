@@ -1,14 +1,7 @@
-// Queries the NYT API for articles. 
-// Contains the user's search form.
-
-
-// Include React
 var React = require("react");
 
-// Create the Search Component
 var Query = React.createClass({
 
-  // Here we set a generic state
   getInitialState: function() {
     return {
       topic: "",
@@ -17,20 +10,13 @@ var Query = React.createClass({
     };
   },
 
-  // When a user submits...
   _handleSubmit: function(event) {
-    // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
-    // clicking the button
+
     event.preventDefault();
 
-    // Set the parent to have the search terms
     this.props._setSearchFeilds(this.state.topic, this.state.startYear, this.state.endYear);
 
-    // Reset the search terms
-    // this.setState({topic: ""});
-    // this.setState({startYear: ""});
-    // this.setState({endYear: ""});
-    
+
   },
 
   _handleTopicChange: function(e) {
@@ -46,7 +32,6 @@ var Query = React.createClass({
   },
 
 
-  // Here we render the Query User Form
   render: function() {
     return (
 
@@ -92,5 +77,4 @@ var Query = React.createClass({
 });
 
 
-// Export the component back for use in Main file
 module.exports = Query;

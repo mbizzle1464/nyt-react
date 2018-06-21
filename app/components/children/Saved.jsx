@@ -1,16 +1,9 @@
-// Displays the Saved Articles that were searched and stored in the database
-
-
-// Include React
 var React = require("react");
 
-// Requiring our helper for making API calls
 var helpers = require("../utils/helpers.js");
 
-// Create the Search Component
 var Saved = React.createClass({
 
-  // Here we set a generic state
   getInitialState: function() {
     return {
       doIneedThis: false
@@ -19,16 +12,12 @@ var Saved = React.createClass({
 
   _handleDelete: function(event) {
 
-    // Collect the clicked article's id
     var articleMongoId = event.target.value;
 
-    // Copy "this" into "that" so that component is accessible inside the functions.
     var that = this;
 
-    // Send this data to the API endpoint to save it to Mongo
     helpers.apiDelete(articleMongoId).then(function(){
 
-      // Query Mongo Again for new Data (this will re-render the component to account for deletion)
       helpers.apiGet().then(function(query){
         that.props._resetMongoResults(query.data);
       });
@@ -38,10 +27,8 @@ var Saved = React.createClass({
 
   },
 
-  // Here we render the Search Results Panel
   render: function() {
 
-    // another way could be using the bind() function. but why not try it this way too.
     var that = this;
 
     return (
@@ -55,8 +42,6 @@ var Saved = React.createClass({
         <div className="panel-body">
           <ul className="list-group col-md-8 col-md-offset-2">
 
-            {/* ++++++++++++++++++++++++++++++++ ITERATE HERE ++++++++++++++++++++++++++++++++ */}
-            {/* Here we use a map function to loop through an array in JSX */}
             {this.props.mongoResults.map(function(search, i) {
 
               return (
@@ -84,5 +69,4 @@ var Saved = React.createClass({
 });
 
 
-// Export the component back for use in Main file
 module.exports = Saved;
