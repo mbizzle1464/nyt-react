@@ -65,7 +65,7 @@ var Query = React.createClass({
 
             <br />
 
-            <button type="submit" className="btn btn-info col-md-offset-5 col-md-2" id="searchBtn">Search</button>
+            <button type="submit" className="btn btn-danger col-md-offset-5 col-md-2" id="searchBtn">Search</button>
 
           </form>
         </div>
